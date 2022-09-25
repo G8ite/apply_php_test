@@ -3,11 +3,18 @@
     $array = array(5, 12, 10, 21, 2, 6, 8, 20, 14, 9, 12);
     $error = "This array does not only contain numeric values";
 
+    // Function that check if all values of the array are of numeric type,
+    // Return boolean .
     function check_type($arr){
+        // Initiate true flag 🟢
         $flag = true;
+        // Loop through each value in the array .
         foreach($arr as $value){
+            // If value type is not integer or double .
             if(gettype($value) != 'integer' && gettype($value) != 'double'){
+                // The flag becomes false 🔴 .
                 $flag = false;
+                // Close the loop
                 return $flag;
             }
         }
@@ -20,7 +27,9 @@
     // print_r($array);
 
     function echo_array($arr){
+        // Retrieve the error variable outside the scope of this function .
         global $error;
+        // Use check_type function to check that all array values are numbers .
         if(check_type($arr)){
             foreach($arr as $nbr){
                 echo "$nbr\n";
@@ -82,7 +91,10 @@
     function check_value($arr, $value){
         global $error;
         if(check_type($arr)){
+            // PHP function that returns the index of a value if it is present in the array 🐘 .
             $index = array_search($value, $arr);
+            // If no index was found,
+            // This value is not present in the array.
             if($index == ""){
                 echo "$value is not present.";
             }
