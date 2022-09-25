@@ -6,7 +6,7 @@
     // Function that check if all values of the array are of numeric type,
     // Return boolean .
     function check_type($arr){
-        // Initiate true flag 🟢
+        // Initiate true flag 🟢 .
         $flag = true;
         // Loop through each value in the array .
         foreach($arr as $value){
